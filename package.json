@@ -1,0 +1,36 @@
+{
+  "name": "socialgraph-api",
+  "version": "1.0.0",
+  "description": "an API implemented in NODE.js using GRAPHQL that serves as a means of connection between the social network \"socialgraph\" and a database in mongodb",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ngantonio/socialgraph-api.git"
+  },
+  "keywords": [
+    "graphql",
+    "mongodb",
+    "node",
+    "react",
+    "social"
+  ],
+  "author": "Gabriel Antonio Oliveira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ngantonio/socialgraph-api/issues"
+  },
+  "homepage": "https://github.com/ngantonio/socialgraph-api#readme",
+  "dependencies": {
+    "apollo-server": "^3.0.2",
+    "bcryptjs": "^2.4.3",
+    "graphql": "^15.5.1",
+    "graphql-subscriptions": "^1.2.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.3",
+    "nodemon": "^2.0.12"
+  }
+}
