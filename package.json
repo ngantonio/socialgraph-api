@@ -25,12 +25,16 @@
   },
   "homepage": "https://github.com/ngantonio/socialgraph-api#readme",
   "dependencies": {
+    "@graphql-tools/schema": "^7.1.5",
     "apollo-server": "^3.0.2",
+    "apollo-server-express": "^3.0.2",
     "bcryptjs": "^2.4.3",
     "graphql": "^15.5.1",
     "graphql-subscriptions": "^1.2.1",
+    "http": "0.0.1-security",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.13.3",
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.12",
+    "subscriptions-transport-ws": "^0.9.19"
   }
 }

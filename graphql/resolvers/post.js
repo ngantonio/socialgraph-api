@@ -2,6 +2,10 @@ const Post = require('../../models/Post')
 const Auth = require('../../middlewares/auth')
 const { AuthenticationError, UserInputError } = require('apollo-server');
 
+const { PubSub } = require("graphql-subscriptions");
+const pubsub = new PubSub();
+
+
 const PostResolvers = {
   Query: {
     async getPosts() {
@@ -41,8 +45,8 @@ const PostResolvers = {
       });
       // Save post
       const createdPost = await newPost.save();
-      console.log(context.pubsub);
-      context.pubsub.publish('NEW_POST', {
+
+      pubsub.publish('NEW_POST', {
         newPost: createdPost
       });
       return createdPost;
@@ -154,7 +158,7 @@ const PostResolvers = {
 
   Subscription: {
     newPost: {
-      subscribe: (_, __, { pubsub }) => pubsub.asyncIterator('NEW_POST')
+      subscribe: () => pubsub.asyncIterator(['NEW_POST']),
     }
   }
 };
